@@ -9,6 +9,7 @@ __pycache__/
 *.json
 .env
 venv/
+.venv/
 
 # Data files (recommended)
 data/
