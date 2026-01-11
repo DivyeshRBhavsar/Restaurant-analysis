@@ -51,7 +51,7 @@ BigQuery (SQL cleaning) → Python (feature engineering) → Analysis.
 - Approximately 18 rows (~3–4% of dataset) required cost imputation.
 - Avg cost of Two == cost
 
----
+
 
 ## [v1.3.0] – Python Feature Engineering
 **Date:** 2026-01-07 to 2026-01-08
@@ -77,10 +77,47 @@ BigQuery (SQL cleaning) → Python (feature engineering) → Analysis.
 - Confirmed weighted ratings reduce small-sample bias.
 - Ensured feature distributions align with business expectations.
 
----
 
-## [Unreleased]
-### Planned
-- Exploratory data analysis (EDA).
-- Visualization of pricing, value, and rating patterns.
-- Insight generation and storytelling.
+
+### [v1.4.0] - Python EDA Report
+**Date:** 2026-01-09 to 2026-01-10
+
+### Added 
+- Exploratory analysis of restaurant ratings, pricing, value-for-money, popularity, and convenience features.
+- Distribution analysis using box plots to compare:
+  - Ratings across price categories
+  - Value-for-money percentiles across price categories
+  - Ratings by convenience score
+- Scatter plot analysis of votes vs ratings using log-transformed vote counts to assess rating reliability.
+
+### Analyzed
+- Identified that higher price categories show slightly higher median ratings, but with significant overlap.
+- Observed that Budget and Moderate restaurants generally offer better relative value.
+- Confirmed that ratings are highly volatile for low-vote restaurants and stabilize as vote volume increases.
+- Found positive association between service convenience and customer ratings, with diminishing returns beyond two services.
+
+### Validated
+- Verified engineered features using summary statistics and visual sanity checks.
+- Confirmed percentile-based value metrics are evenly distributed and interpretable.
+- Ensured no invalid values (NaN or infinite) remain in analytical features.
+
+## [v1.5.0] – Interactive Tableau Dashboard
+**Date:** 2026-01-11
+
+### Added
+- Interactive Tableau dashboard summarizing key findings from EDA.
+- Box plots showing:
+  - Rating distribution by price category
+  - Value-for-money distribution by price category
+  - Impact of convenience score on ratings
+- Scatter plot visualizing popularity (log-transformed votes) vs rating reliability.
+- Top 10 restaurants ranked by value-for-money percentile.
+
+### Enhanced
+- Applied consistent labeling, axis titles, and chart formatting for clarity.
+- Added trend line to popularity vs rating plot to highlight stabilization pattern.
+
+### Insights
+- Demonstrated that higher prices do not consistently translate into better value.
+- Highlighted that customer convenience features positively influence ratings.
+- Identified top-performing restaurants that deliver exceptional value relative to cost.
